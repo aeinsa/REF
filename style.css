@@ -277,18 +277,31 @@ footer {
 }
 
 /* 모바일 반응형 대응 (정리 완료) */
+/* 모바일 반응형 대응 (스크롤 추가 및 레이아웃 정리 완료) */
 @media (max-width: 680px) {
     .modal-body {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
     }
+
     .modal-img-container {
         width: 65%; /* 모바일 화면에서 세로형 이미지가 너무 거대해지지 않도록 가로폭 제한 */
     }
+
     .modal-content {
-        margin: 5% auto;
+        margin: auto; /* 세로 중앙 정렬을 위해 margin을 auto로 설정 */
         width: 92%;
         padding: 2rem 1.5rem;
+
+        /* 💡 [핵심] 모바일 내부 스크롤 허용 속성 */
+        max-height: 80vh;                  /* 모달 높이를 스마트폰 화면 높이의 80%로 제한 */
+        overflow-y: auto;                  /* 내용이 넘치면 모달 안에서 스크롤바 생성 */
+        -webkit-overflow-scrolling: touch; /* 아이폰(iOS)에서 부드러운 터치 스크롤 지원 */
+        box-sizing: border-box;            /* 패딩이 제한 높이를 넘지 않도록 고정 */
+        
+        /* 긴 텍스트 줄바꿈 지정 */
+        word-break: keep-all;              
+        overflow-wrap: break-word;
     }
 }
