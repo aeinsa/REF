@@ -188,7 +188,6 @@ hr {
 
 /* ------------------------------------------------------------ */
 
-/* 모달 팝업창 레이아웃 */
 .modal {
     display: none;
     position: fixed;
@@ -200,15 +199,13 @@ hr {
     background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(5px);
     
-    /* 모달을 화면 중앙에 정렬하기 위한 flex 설정 추가 */
-    display: none; /* JS로 openModal 시 display: flex 로 변경하면 더 좋습니다! */
-    justify-content: center;
+    /* 모달창을 화면 세로/가로 중앙에 예쁘게 배치 */
     align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
     background-color: #162447;
-    margin: auto; /* flex 중앙 정렬을 위해 margin 축소 */
     padding: 2.5rem;
     border-radius: 16px;
     width: 85%;
@@ -217,14 +214,11 @@ hr {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     animation: modalSlide 0.3s ease-out;
 
-    /* 💡 [핵심] 텍스트 잘림 방지 스크롤 속성 추가 */
-    max-height: 85vh;        /* 화면 높이의 85% 이상 넘가지 않도록 제한 */
-    overflow-y: auto;        /* 내용이 넘치면 내부 스크롤바 생성 */
-    box-sizing: border-box; /* 패딩이 높이에 포함되도록 설정 */
-    
-    /* 긴 텍스트 줄바꿈 설정 */
-    word-break: keep-all;    
-    overflow-wrap: break-word; 
+    /* 💡 [핵심] 스크롤 생성 설정 */
+    max-height: 80vh;              /* 모달 전체 높이를 화면 높이의 80%로 제한 */
+    overflow-y: auto;              /* 내용이 길어지면 수직 스크롤바 생성 */
+    -webkit-overflow-scrolling: touch; /* 모바일(iOS) 터치 스크롤 부드럽게 */
+    box-sizing: border-box;        /* 패딩이 제한 높이를 넘어가지 않도록 고정 */
 }
 
 @keyframes modalSlide {
@@ -232,28 +226,19 @@ hr {
     to { opacity: 1; transform: translateY(0); }
 }
 
-
-/* ==========================================
-   📱 모바일 화면 최적화 (반응형 추가)
-   ========================================== */
+/* 📱 모바일 터치 환경 최적화 */
 @media screen and (max-width: 768px) {
     .modal-content {
-        width: 90%;            /* 모바일에서는 여백을 줄여 넓게 활용 */
-        padding: 1.5rem;       /* 내부 여백을 줄여 공간 확보 */
-        max-height: 80vh;      /* 모바일 상하 여백 확보 */
+        width: 90%;
+        padding: 1.5rem;       /* 모바일은 내부 여백을 살짝 줄여 텍스트 공간 확보 */
+        max-height: 85vh;      /* 모바일에서는 높이를 조금 더 써서 답답함 해소 */
     }
 
-    /* HTML 내부 modal-body가 있을 경우 가로 -> 세로 배치 전환 */
+    /* 모바일에서는 이미지와 설명이 위아래(1열)로 나오도록 flex 설정 */
     .modal-body {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .modal-img-container {
-        width: 100%;
-        max-width: 220px;     /* 모바일 이미지 크기 조절 */
-        margin: 0 auto;
+        align-items: center;
     }
 }
 
