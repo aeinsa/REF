@@ -215,7 +215,7 @@ hr {
     animation: modalSlide 0.3s ease-out;
 
     /* 💡 [핵심] 스크롤 생성 설정 */
-    max-height: 80vh;              /* 모달 전체 높이를 화면 높이의 80%로 제한 */
+    max-height: 85vh;              /* 모달 전체 높이를 화면 높이의 80%로 제한 */
     overflow-y: auto;              /* 내용이 길어지면 수직 스크롤바 생성 */
     -webkit-overflow-scrolling: touch; /* 모바일(iOS) 터치 스크롤 부드럽게 */
     box-sizing: border-box;        /* 패딩이 제한 높이를 넘어가지 않도록 고정 */
