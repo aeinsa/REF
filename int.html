@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세계관 & 캐릭터 소개</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>크로니클즈 오브 판타지</h1>
+        <p>마법과 기계가 공존하는 세계의 기록</p>
+    </header>
+
+    <nav class="tab-menu">
+        <button class="tab-btn active" onclick="switchTab('worldview')">🌌 세계관 보기</button>
+        <button class="tab-btn" onclick="switchTab('characters')">👥 캐릭터 보기</button>
+    </nav>
+
+    <main class="container">
+        
+        <section id="worldview" class="tab-content active-content">
+            <div class="card">
+                <h2>🌌 세계관 (Worldview)</h2>
+                <hr>
+                <p>이곳은 거대한 하늘 섬들로 이루어진 세계, <strong>'에테리아'</strong>입니다. 고대의 마법 에너지를 동력으로 움직이는 비공정과, 증기기관으로 발전한 하층 도시들의 갈등이 이 세계의 중심 이야기입니다.</p>
+                <p>플레이어(혹은 독자)는 사라진 고대 유물을 찾아 나서는 모험가가 되어 이 거대한 운명의 소용돌이에 휘말리게 됩니다.</p>
+            </div>
+        </section>
+
+        <section id="characters" class="tab-content">
+            <h2>👥 주요 캐릭터 (Characters)</h2>
+            <p style="color: #bbb; margin-bottom: 1.5rem;">💡 캐릭터 카드를 클릭하면 상세 정보를 볼 수 있습니다.</p>
+            
+            <div class="character-grid">
+                <div class="character-card" onclick="openModal('에를렌 루비에튼', '점원 / 주점 할렐루바', '주점 할렐루바에서 일하는 상냥하고 친절한 아가씨.', '나이: 24세<br>이능: 없음<br><br>상세 스토리:4년전 20살 시절 마족 대전쟁으로 부모님이 모두 돌아가시고 꿋꿋하게 살아가고 있는 굳센 아가씨이지만 마음 한켠에는 아직도 그리움과 고독이 짙은 사람입니다.','https://itimg.kr/2700/REF/A/1.webp?q=80')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/A/0.webp" alt="에를렌 루비에튼" class="ratio-img">
+                    </div>
+                    <h3>에를렌</h3>
+                    <p class="role">점원 /주점 할렐루바</p>
+                </div>
+
+                <div class="character-card" onclick="openModal('카일', '동료 / 천재 공학자', '하층 도시 출신의 메카닉. 기계 다루는 솜씨는 일품이지만 냉철한 성격입니다.', '나이: 24세<br>무기: 개조 샷건<br>특기: 기계 해킹, 함선 정비<br><br>상세 스토리: 하층 도시의 악명 높은 공업 지대에서 독학으로 기술을 익혔습니다. 겉으로는 차가워 보이지만 동료들에게 깊은 애정을 가지고 있습니다.', 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1216&h=832&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1216&h=832&auto=format&fit=crop" alt="카일" class="ratio-img">
+                    </div>
+                    <h3>카일 (Kyle)</h3>
+                    <p class="role">동료 / 천재 공학자</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="charModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <div class="image-ratio-box">
+                        <img id="modalImg" src="" alt="캐릭터 상세 이미지" class="ratio-img">
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalName">캐릭터 이름</h2>
+                    <p id="modalRole" class="role">역할</p>
+                    <p id="modalDesc" style="margin-bottom: 1rem; font-weight: bold;"></p>
+                    <hr>
+                    <p id="modalDetail" style="margin-top: 1rem; color: #ccc;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 내 창작 세계관 Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active-content'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active-content');
+            event.currentTarget.classList.add('active');
+        }
+
+        function openModal(name, role, desc, detail, imgSrc) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalRole').innerText = role;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalDetail').innerHTML = detail;
+            document.getElementById('modalImg').src = imgSrc; 
+            
+            document.getElementById('charModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('charModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('charModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
