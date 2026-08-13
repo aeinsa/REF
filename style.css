@@ -1,0 +1,270 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1d; /* 다크 테마 배경 */
+    color: #eeeeee;
+}
+
+/* 헤더 */
+header {
+    background: linear-gradient(135deg, #1f4068, #162447);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 탭 메뉴 네비게이션 */
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    background-color: #162447;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab-btn {
+    flex: 1;
+    max-width: 200px;
+    background: none;
+    border: none;
+    color: #8a99ad;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.tab-btn:hover {
+    color: #fff;
+    background-color: #1f4068;
+}
+
+.tab-btn.active {
+    color: #fff;
+    background-color: #e43f5a; /* 활성화 포인트 컬러 */
+    border-bottom: 4px solid #fff;
+}
+
+/* 메인 레이아웃 */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    min-height: 50vh;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeInEffect 0.4s ease;
+}
+
+.tab-content.active-content {
+    display: block;
+}
+
+@keyframes fadeInEffect {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin-bottom: 1rem;
+}
+
+/* 세계관 카드 */
+.card {
+    background: #1f4068;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* 캐릭터 그리드 및 카드 */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.character-card {
+    background: #1f4068;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(228,63,90,0.3); /* 호버 시 붉은 은은한 광원 효과 */
+}
+
+.character-card h3 {
+    margin-bottom: 0.3rem;
+}
+
+.role {
+    font-size: 0.9rem;
+    color: #e43f5a;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------------------------------------------------
+   ⭐ 이미지 비율 유지 박스 핵심 스타일 영역 (수정 및 정리 완료)
+------------------------------------------------------------ */
+
+/* 1. 메인 카드용: 1216x832 가로형 비율 박스 */
+.image-ratio-box {
+    width: 100%;
+    padding-top: 68.42%; /* (832 / 1216) * 100% 가로형 비율 */
+    position: relative;
+    background-color: #162447;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+/* 2. 모달 팝업용: 좌측 이미지 부모 컨테이너 너비 제한 */
+.modal-img-container {
+    width: 240px;        /* 세로형 이미지가 이쁘게 보일 수 있도록 가로폭 고정 */
+    flex-shrink: 0;      /* 크기 축소 방지 */
+}
+
+/* 3. 모달 팝업용: 832x1216 세로형 비율 박스 */
+.image-ratio-box2 {
+    width: 100%;
+    padding-top: 146.15%; /* (1216 / 832) * 100% 세로형 비율 유지 */
+    position: relative;
+    background-color: #162447;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 4. 가로/세로 박스 내부에 들어가는 실제 이미지 공통 설정 */
+.image-ratio-box .ratio-img,
+.image-ratio-box2 .ratio-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* 비율 깨짐 없이 가득 채움 */
+}
+
+/* 가로형은 중앙 기준, 세로형(팝업)은 얼굴이 안 잘리게 위쪽 기준 정렬 */
+.image-ratio-box .ratio-img {
+    object-position: center;
+}
+.image-ratio-box2 .ratio-img {
+    object-position: top center;
+}
+
+/* ------------------------------------------------------------ */
+
+/* 모달 팝업창 레이아웃 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #162447;
+    margin: 8% auto;
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 85%;
+    max-width: 750px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: #8a99ad;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.modal-body {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start; /* 상단 정렬 */
+    margin-top: 1rem;
+}
+
+.modal-info {
+    flex-grow: 1;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #162447;
+    color: #8a99ad;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
+
+/* 모바일 반응형 대응 (정리 완료) */
+@media (max-width: 680px) {
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .modal-img-container {
+        width: 65%; /* 모바일 화면에서 세로형 이미지가 너무 거대해지지 않도록 가로폭 제한 */
+    }
+    .modal-content {
+        margin: 5% auto;
+        width: 92%;
+        padding: 2rem 1.5rem;
+    }
+}
