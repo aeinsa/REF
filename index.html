@@ -16,19 +16,77 @@
     <nav class="tab-menu">
         <button class="tab-btn active" onclick="switchTab('worldview')">🌌 세계관 보기</button>
         <button class="tab-btn" onclick="switchTab('characters')">👥 캐릭터 보기</button>
-         <button class="tab-btn" onclick="switchTab('guide')">🎮 플레이 가이드</button>
+         <button class="tab-btn" onclick="switchTab('region')">🗺️ 장소</button>
+         <button class="tab-btn" onclick="switchTab('dungeon')">⚔️ 던전</button>
     </nav>
 
     <main class="container">
-        
+        <!--/*세계관 소개*/-->
         <section id="worldview" class="tab-content active-content">
             <div class="card">
                 <h2>🌌 세계관 (Worldview)</h2>
                 <hr>
-                <p>이곳은 거대한 하늘 섬들로 이루어진 세계, <strong>'에테리아'</strong>입니다. 고대의 마법 에너지를 동력으로 움직이는 비공정과, 증기기관으로 발전한 하층 도시들의 갈등이 이 세계의 중심 이야기입니다.</p>
-                <p>플레이어(혹은 독자)는 사라진 고대 유물을 찾아 나서는 모험가가 되어 이 거대한 운명의 소용돌이에 휘말리게 됩니다.</p>
+                <p> 이능을 통해 능력을 발휘하며 살아가는 세계관.탐욕과 분노,세상에 대한 증오와 후회로 뭉쳐진 세상입니다.마왕을 쓰러뜨리고 세상을 구원하였지만 황제의 탐욕으로 용사는 내쳐지게 됩니다.</p>
+                <p>유저는 마왕이 토벌 되었음에도 불구하고 다시 퍼져나가는 마기로 인해 오염되어버린 영혼들을 구원하는 이야기로 진행됩니다.</p>
             </div>
-        </section>
+            <br>
+            <div class="card">
+                <h2>지도</h2>
+                <img src="https://itimg.kr/2700/REF/MAP.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+            </div>
+        </section> 
+    <!--/*지역*/-->
+       <section  id="region" class="tab-content">
+        <h2>장소</h2>
+        <div class="card_region">
+                <h2>할렐루바</h2>
+                <img src="https://itimg.kr/2700/REF/RS/HA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>힐리네스의 인기 주점</h3>
+                </div>
+                <br>
+                <div class="card_region">
+                <h2>만정상회</h2>
+                <img src="https://itimg.kr/2700/REF/RS/MA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>유텔피온의 모든 정보가 모인 최대 정보 상회</h3>
+                </div>
+                <br>
+                <div class="card_region">
+                <h2>엘시온 교단</h2>
+                <img src="https://itimg.kr/2700/REF/RS/CH.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>아티피온의 신성한 신앙이 깃든 성스러운 교단</h3>
+                </div>
+                <br>
+                <div class="card_region">
+                <h2>흑영암도</h2>
+                <img src="https://itimg.kr/2700/REF/RS/BL.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>세상을 굴복 시키기 위해 그림자 속에 칼날을 숨긴 악의 집단</h3>
+                </div>
+                <br>
+                <div class="card_region">
+                <h2>황실</h2>
+                <img src="https://itimg.kr/2700/REF/RS/RO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>제국을 다스리는 가장 막강한 권력</h3>
+                </div>
+                <br>
+                <div class="card_region">
+                <h2>라미안 수인숲</h2>
+                <img src="https://itimg.kr/2700/REF/RS/AF.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>수인들이 힘을 합쳐 살아가는 공존의 숲</h3>
+                </div>
+                <br>
+                <div class="card_region">
+                <h2>데이브레이크</h2>
+                <img src="https://itimg.kr/2700/REF/RS/DK.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                </div>
+                <br>
+                <div class="card_region">
+                <h2>테르셀론 공작가</h2>
+                <img src="https://itimg.kr/2700/REF/RS/GB.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>제국에서 가장 명망 높은 공작가 </h3>
+                </div>
+          </div>
+            </div>
+      </section>
 
         <section id="characters" class="tab-content">
             <h2>👥 주요 캐릭터 (Characters)</h2>
@@ -323,7 +381,7 @@
             document.getElementById('modalImg').src = imgSrc; 
             
             document.getElementById('charModal').style.display = 'flex';
-            document.body.style.overflow = 'block'; // 부모 스크롤 방지
+            document.body.style.overflow = 'flex'; // 부모 스크롤 방지
         }
 
         // 모달 팝업창 닫기 함수
