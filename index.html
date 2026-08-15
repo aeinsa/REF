@@ -10,23 +10,23 @@
 
     <header>
         <h1>잊혀진 용사는 돌아온다</h1>
-        <p>그를 버린 세상은 그를 다시 불렀다.또 한번에 구원을 위해서</p>
+        <p>그를 버린 세상은 그를 다시 불렀다. 또 한번의 구원을 위해서</p>
     </header>
 
     <nav class="tab-menu">
         <button class="tab-btn active" onclick="switchTab('worldview')">🌌 세계관 보기</button>
         <button class="tab-btn" onclick="switchTab('characters')">👥 캐릭터 보기</button>
-         <button class="tab-btn" onclick="switchTab('region')">🗺️ 장소</button>
-         <button class="tab-btn" onclick="switchTab('dungeon')">⚔️ 던전</button>
+        <button class="tab-btn" onclick="switchTab('region')">🗺️ 장소</button>
+        <button class="tab-btn" onclick="switchTab('dungeon')">⚔️ 던전</button>
     </nav>
 
     <main class="container">
-        <!--/*세계관 소개*/-->
+        <!-- 세계관 소개 -->
         <section id="worldview" class="tab-content active-content">
             <div class="card">
                 <h2>🌌 세계관 (Worldview)</h2>
                 <hr>
-                <p> 이능을 통해 능력을 발휘하며 살아가는 세계관.탐욕과 분노,세상에 대한 증오와 후회로 뭉쳐진 세상입니다.마왕을 쓰러뜨리고 세상을 구원하였지만 황제의 탐욕으로 용사는 내쳐지게 됩니다.</p>
+                <p>이능을 통해 능력을 발휘하며 살아가는 세계관. 탐욕과 분노, 세상에 대한 증오와 후회로 뭉쳐진 세상입니다. 마왕을 쓰러뜨리고 세상을 구원하였지만 황제의 탐욕으로 용사는 내쳐지게 됩니다.</p>
                 <p>유저는 마왕이 토벌 되었음에도 불구하고 다시 퍼져나가는 마기로 인해 오염되어버린 영혼들을 구원하는 이야기로 진행됩니다.</p>
             </div>
             <br>
@@ -35,73 +35,184 @@
                 <img src="https://itimg.kr/2700/REF/MAP.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
             </div>
         </section> 
-        <!--/*지역*/-->
-       <section  id="dungeon" class="tab-content">
-        <h2>⚔️ 던전</h2>
-        <p style="color: #bbb; margin-bottom: 1.5rem;">💡스포주의.카드를 클릭하면 던전 몬스터 정보를 볼 수 있습니다.</p>
-        <div class="card_region">
+
+        <!-- 던전 -->
+        <section id="dungeon" class="tab-content">
+            <h2>⚔️ 던전</h2>
+            <p style="color: #bbb; margin-bottom: 1.5rem;">💡 스포주의. 카드를 클릭하면 던전 몬스터 정보를 볼 수 있습니다.</p>
+            
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '타락한 숲의 정령', img: 'https://itimg.kr/2700/REF/DU/FO/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '마기로 인해 변질된 숲의 정령', effect: 'D급 / 상태 이상 유발' }
+            ],[
+                { name: '포식덩쿨', img: 'https://itimg.kr/2700/REF/DU/FO/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '움직이는 식물형 마수', effect: 'C급 / 구속 및 지속 피해' }
+            ],[
+                { name: '왜곡된 수호령', img: 'https://itimg.kr/2700/REF/DU/FO/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '숲을 지키던 존재가 뒤틀린 형태.고통과 증오가 섞여 끊임없이 저주 섞인 말을 되새긴다.', effect: 'A급 / 상태 이상 유발' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/FO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="잠든 숲의 균열" class="ratio-img">
+                </div>
+                <h3>잠든 숲의 균열</h3>
+                <p class="role">마기로 물들어버린 평화의 숲.</p>
             </div>
-      </section>
-    <!--/*지역*/-->
-       <section  id="region" class="tab-content">
-        <h2>🗺️ 장소</h2>
-        <div class="card_region">
+<br>
+        <!--황금 먹는 미궁-->
+          <div class="character-card" onclick="openMonsterModal([
+                { name: '골드 슬라임', img: 'https://itimg.kr/2700/REF/DU/GO/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '금화 형태를 띠는 슬라임', effect: 'D급 / 도주 성향 / 처치 시 재화 드랍' }
+            ],[
+                { name: '금속 수호병', img: 'https://itimg.kr/2700/REF/DU/GO/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '미궁을 지키는 자동 방어체', effect: 'B급 / 높은 물리 방어' }
+            ],[
+                { name: '골드 데버러', img: 'https://itimg.kr/2700/REF/DU/GO/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '금속과 재화를 흡수하며 성장하는 거대 개체', effect: 'A+급 / 재화를 흡수할수록 강화됨' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/GO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="황금 먹는 미궁" class="ratio-img">
+                </div>
+                <h3>황금 먹는 미궁</h3>
+                <p class="role">끝없이 이어지는 금속 구조의 미궁.</p>
+            </div>
+            <br>
+        <!--빙결설원-->
+        <div class="character-card" onclick="openMonsterModal([
+                { name: '빙결 망자', img: 'https://itimg.kr/2700/REF/DU/SN/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '얼어붙은 시체', effect: 'C급 / 파괴 후 재활성화' }
+            ],[
+                { name: '설원 포식자', img: 'https://itimg.kr/2700/REF/DU/SN/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '혹한에 적응한 마수', effect: 'B급 / 은신 및 기습 공격' }
+            ],[
+                { name: '빙결 사신', img: 'https://itimg.kr/2700/REF/DU/SN/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '냉기와 원한으로 이루어진 보스', effect: 'A급 / 타격지점 빙결화 / 상시 냉기방출' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/SN.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="빙결 설원" class="ratio-img">
+                </div>
+                <h3>빙결 설원</h3>
+                <p class="role">콜리비탄 안에 온난한 마을로 들어서기 이전에 펼쳐지는 빙결지대.</p>
+            </div>
+            <br>
+            <!--화룡의 땅-->
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '레드 와이번', img: 'https://itimg.kr/2700/REF/DU/FG/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '화룡이 먹다 남긴 먹이를 먹는 와이번. 떼로 무리지어 다니기에 위험하다.', effect: 'B급 / 공중 화염탄 발사, 비행, 낙하공격' }
+            ],[
+                { name: '화룡 이그니스', img: 'https://itimg.kr/2700/REF/DU/FG/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '화염을 품은 레드 드래곤. 강력한 비늘과 생명력', effect: 'S+급 / 공중 폭격 / 초고열 브레스 / 비행, 치악력' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/FG.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="화룡의 땅" class="ratio-img">
+                </div>
+                <h3>화룡의 땅</h3>
+                <p class="role">라미안 수인국 깊은 숲속 붉은 대지 아래 잠든 화룡의 거주지.</p>
+            </div>
+            <br>
+            <!--황혼의 지하성당-->
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '타락한 성기사', img: 'https://itimg.kr/2700/REF/DU/HO/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '신성력을 잃고 뒤틀린 기사', effect: 'B급 / 검술 / 약한 신성 마법 사용' }
+            ],[
+                { name: '타락한 대주교', img: 'https://itimg.kr/2700/REF/DU/HO/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '신성 마법과 저주를 동시에 사용하는 타락한 대주교', effect: 'S급 / 신성 마법 / 저주 동시 사용' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/HO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="황혼의 지하성당" class="ratio-img">
+                </div>
+                <h3>황혼의 지하성당</h3>
+                <p class="role">엘시온 교단 지하 깊숙이 숨겨진 고대 성당</p>
+            </div>
+            <br>
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '증오의 배회자', img: 'https://itimg.kr/2700/REF/DU/GC/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '죽음에 대한 분노와 세상에 대한 증오로 물들어 배회하는 망령. 무리지어 다니며 때로 덤벼든다.', effect: 'C급 / 무리지어 습격' }
+            ],[
+                { name: '후회의 문지기', img: 'https://itimg.kr/2700/REF/DU/GC/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '원념의 기사단장으로 가는 추격자들을 막는 문지기.', effect: 'B+급 / 마기가 깃든 사슬 소환 / 대상 구속' }
+            ],[
+                { name: '원념의 기사단장', img: 'https://itimg.kr/2700/REF/DU/GC/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '제국의 배신으로 죽은 선대의 기사단장.', effect: 'S+급 / 검술 / 마기 침식' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/GC.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="망자의 도시" class="ratio-img">
+                </div>
+                <h3>망자의 도시</h3>
+                <p class="role">마왕의 정수의 영향으로 잠들었던 사념들이 부활한 사지(死地)</p>
+            </div>
+            <br>
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '히드라 새끼', img: 'https://itimg.kr/2700/REF/DU/LA/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '재생 능력을 가진 개체', effect: 'B급 / 시간이 지날수록 강해짐' }
+            ],[
+                { name: '그랜드 히드라', img: 'https://itimg.kr/2700/REF/DU/LA/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '다수의 머리를 가진 초대형 마수', effect: 'SS+급 / 재생 / 독 / 압도적 체력, 타락한 화룡 이그니스 조차 뛰어넘는 흉폭함' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/LA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="시련의 미궁" class="ratio-img">
+                </div>
+                <h3>시련의 미궁</h3>
+                <p class="role">끊임없이 구조가 변화하는 초대형 미궁.</p>
+            </div>
+            <br>
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '감찰드론', img: 'https://itimg.kr/2700/REF/DU/FB/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '던전 내부의 이능 마력을 탐지하고 시체처리기를 호출하는 기계.', effect: 'E급 / 이능 마력 탐지 / 시체처리기 호출' }
+            ],[
+                { name: '시체처리기', img: 'https://itimg.kr/2700/REF/DU/FB/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '광폭화한 실험체를 처리하는 살육기계.', effect: 'A급 / 고열광선 / 대량 배치' }
+            ],[
+                { name: '버스터 Mk.5', img: 'https://itimg.kr/2700/REF/DU/FB/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '실험기록서를 지키는 베르데아 최종병기.', effect: 'SS+급 / 이능흡수 / 광역기 / 초고열 레이저' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/FB.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="금지된 서고" class="ratio-img">
+                </div>
+                <h3>금지된 서고</h3>
+                <p class="role">베르데아 제국이 마왕의 정수를 인간이 안전하게 다루게 만들기 위해 건설한 비밀 연구시설.</p>
+            </div>
+        </section>
+
+        <!-- 장소 -->
+        <section id="region" class="tab-content">
+            <h2>🗺️ 장소</h2>
+            <div class="card_region">
                 <h2>할렐루바</h2>
                 <img src="https://itimg.kr/2700/REF/RS/HA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
                 <h3>힐리네스의 인기 주점</h3>
-                </div>
-                <br>
-                <div class="card_region">
+            </div>
+            <br>
+            <div class="card_region">
                 <h2>만정상회</h2>
                 <img src="https://itimg.kr/2700/REF/RS/MA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
                 <h3>유텔피온의 모든 정보가 모인 최대 정보 상회</h3>
-                </div>
-                <br>
-                <div class="card_region">
+            </div>
+            <br>
+            <div class="card_region">
                 <h2>엘시온 교단</h2>
                 <img src="https://itimg.kr/2700/REF/RS/CH.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
                 <h3>아티피온의 신성한 신앙이 깃든 성스러운 교단</h3>
-                </div>
-                <br>
-                <div class="card_region">
+            </div>
+            <br>
+            <div class="card_region">
                 <h2>흑영암도</h2>
                 <img src="https://itimg.kr/2700/REF/RS/BL.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
                 <h3>세상을 굴복 시키기 위해 그림자 속에 칼날을 숨긴 악의 집단</h3>
-                </div>
-                <br>
-                <div class="card_region">
+            </div>
+            <br>
+            <div class="card_region">
                 <h2>황실</h2>
                 <img src="https://itimg.kr/2700/REF/RS/RO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
                 <h3>제국을 다스리는 가장 막강한 권력</h3>
-                </div>
-                <br>
-                <div class="card_region">
+            </div>
+            <br>
+            <div class="card_region">
                 <h2>라미안 수인숲</h2>
                 <img src="https://itimg.kr/2700/REF/RS/AF.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
                 <h3>수인들이 힘을 합쳐 살아가는 공존의 숲</h3>
-                </div>
-                <br>
-                <div class="card_region">
+            </div>
+            <br>
+            <div class="card_region">
                 <h2>데이브레이크</h2>
                 <img src="https://itimg.kr/2700/REF/RS/DK.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
-                </div>
-                <br>
-                <div class="card_region">
+                 <h3>제국 제일 모험가 길드</h3>
+            </div>
+            <br>
+            <div class="card_region">
                 <h2>테르셀론 공작가</h2>
                 <img src="https://itimg.kr/2700/REF/RS/GB.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
-                <h3>제국에서 가장 명망 높은 공작가 </h3>
-                </div>
-          </div>
+                <h3>제국에서 가장 명망 높은 공작가</h3>
             </div>
-      </section>
+        </section>
 
+        <!-- 캐릭터 -->
         <section id="characters" class="tab-content">
             <h2>👥 주요 캐릭터 (Characters)</h2>
             <p style="color: #bbb; margin-bottom: 1.5rem;">💡 캐릭터 카드를 클릭하면 상세 정보를 볼 수 있습니다.</p>
-            <!-- /*1에를렌*/ -->
+            
+             <!-- /*1에를렌*/ -->
             <div class="character-grid">
                 <div class="character-card" onclick="openModal('에를렌 루비에튼', '주점 점원 / 주점 할렐루바', '주점 할렐루바의 점원.', '나이: 24<br>소속: 주점 할렐루바<br><br>상세 스토리: 주점 할렐루바의 단골손님들에게 사랑받는 점원입니다.친절하고 겁이 많지만 용기낼 줄 아는 시골 아가씨이죠, 용사가 돌아올거라 굳게 믿고 있답니다.<br><br>능력:없음','https://itimg.kr/2700/REF/A/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
-		  <div class="image-ratio-box">
+          <div class="image-ratio-box">
                         <img src="https://itimg.kr/2700/REF/A/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="에를렌 루비에튼" class="ratio-img">
                   </div>
                     <h3>에를렌 루비에튼</h3>
@@ -111,7 +222,7 @@
            <!-- /*에를렌*/ -->
 
           <!-- /*2아가텔*/ -->
-	   <div class="character-grid">
+       <div class="character-grid">
                 <div class="character-card" onclick="openModal('아가텔', '천뢰 / 무소속', '콜리비탄 숨겨진 마을에서 살아가는 전 천광 기사단 단장.', '나이:32<br><br>상세 스토리: 용사를 존경하고 연모했지만 아무것도 못한 채 그가 떠나가는 것을 지켜봐야 했던 과거를 후회하며 살아가는 옛 전우입니다.<br><br>능력<br>뇌전:검에 번개와 전격을 두르고 공격 시 빠른속도와 더불어 주변으로 연쇄 피해를 입히며 전투가 지속될수록 위력과 범위가 점점 증가하고 지정한 위치에 낙뢰를 꽂을 수도 있다.','https://itimg.kr/2700/REF/B/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
                     <div class="image-ratio-box">
                         <img src="https://itimg.kr/2700/REF/B/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="아가텔" class="ratio-img">
@@ -327,27 +438,26 @@
                <div class="character-grid">
                 <div class="character-card" onclick="openModal('리베시아', '1대 성녀 / 엘시온 교단', '레벨리타의 의붓언', '나이:26<br><br>상세 스토리:3년전 마왕이 세상에 나타나고 부터 생겨는 초대성녀.외부로는 알려져 있지 않은 레벨리타의 의붓언니.폴가튼 랜드의 진실의 거울을 찾기 위해 떠나있음,용사의 희생을 더러운 오명으로 뒤집어 쓰고 그 진실을 철저하게 숨기는 제국에게 대항 하기 위해 엘시온 교단의 안위만을 중요시하는 교단에게 대항하기 위해 레벨리타에게 사과의 말과 성녀직을 물려주고 교단을 떠나게 되었습니다.<br><br>능력<br>신성력이 깃든 성가를 통해 악을 멸하는 노래를 부른다.범위가 넓어질 수록 위력이 약해지며 한곳으로 집중해서 공격하는것도 가능하다.','https://itimg.kr/2700/REF/V/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
                     <div class="image-ratio-box">
-                        <img src="https://itimg.kr/2700/REF/V/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="켈리" class="ratio-img">
+                        <img src="https://itimg.kr/2700/REF/V/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="리베시아" class="ratio-img">
                     </div>
-                    <h3>켈리 티르시아</h3>
-                    <p class="role">만정상주 / 만정상회</p>
+                    <h3>리베시아 세인터루스</h3>
+                    <p class="role">초대 성녀 / 전 엘시온 교단</p>
                 </div>
             </div>
         <!-- /*카이데우*/ --> 
         </section>
     </main>
 
+    <!-- 캐릭터 모달 -->
     <div id="charModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <div class="modal-body">
-                
                 <div class="modal-img-container">
                     <div class="image-ratio-box2">
                         <img id="modalImg" src="" alt="캐릭터 상세 이미지" class="ratio-img">
                     </div>
                 </div>
-                
                 <div class="modal-info">
                     <h2 id="modalName">캐릭터 이름</h2>
                     <p id="modalRole" class="role">역할</p>
@@ -358,8 +468,16 @@
             </div>
         </div>
     </div>
- <section id="guide" class="tab-content">
- </section>
+
+    <!-- 몬스터 모달 -->
+    <div id="monsterModal" class="modal">
+        <div class="modal-content" style="max-height: 80vh; display: flex; flex-direction: column;">
+            <span class="close-btn" onclick="closeMonsterModal()">&times;</span>
+            <div id="monsterListContainer" style="overflow-y: auto; overflow-x: hidden; padding-right: 5px; display: flex; flex-direction: column; gap: 30px;">
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 내 창작 세계관 Project. All rights reserved.</p>
     </footer>
@@ -384,24 +502,77 @@
             document.getElementById('modalDesc').innerText = desc;
             document.getElementById('modalDetail').innerHTML = detail;
             
-            // 클릭할 때 매칭된 세로형 이미지 주소(1.webp 등)를 팝업창 이미지 src에 주입
             document.getElementById('modalImg').src = imgSrc; 
             
             document.getElementById('charModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // 부모 스크롤 방지
+            document.body.style.overflow = 'hidden';
         }
 
         // 모달 팝업창 닫기 함수
         function closeModal() {
             document.getElementById('charModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // 부모 스크롤 복구
+            document.body.style.overflow = 'auto';
         }
 
         // 어두운 배경 클릭 시 닫기
         window.onclick = function(event) {
-            const modal = document.getElementById('charModal');
-            if (event.target == modal) {
+            const charModal = document.getElementById('charModal');
+            const monsterModal = document.getElementById('monsterModal');
+            if (event.target == charModal) {
                 closeModal();
+            }
+            if (event.target == monsterModal) {
+                closeMonsterModal();
+            }
+        }
+
+        // 전체 몬스터 목록을 모달에 띄우는 함수
+        // 매개변수를 가변 인자(...args) 또는 3개 다 받도록 수정합니다.
+function openMonsterModal(...monsterArrays) {
+    const container = document.getElementById('monsterListContainer');
+    container.innerHTML = '';
+
+    // 전달받은 여러 개의 배열을 하나로 합침 ([ [A], [B], [C] ] -> [A, B, C])
+    const allMonsters = monsterArrays.flat();
+
+    allMonsters.forEach(monster => {
+        const monsterBlock = document.createElement('div');
+        monsterBlock.style.cssText = 'background: #1f4068; padding: 1.5rem; border-radius: 12px; display: flex; flex-direction: column; gap: 15px;';
+
+        monsterBlock.innerHTML = `
+            <h2 style="color: #fff; font-size: 1.6rem; margin: 0;">${monster.name}</h2>
+            <div class="image-ratio-box" style="background: #111; border-radius: 8px; overflow: hidden;">
+                <img src="${monster.img}" alt="${monster.name}" class="ratio-img" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div style="background: #162447; padding: 1rem; border-radius: 8px;">
+                <h4 style="color: #e43f5a; font-size: 1rem; margin: 0 0 5px 0;">설명</h4>
+                <p style="color: #ccc; font-size: 0.95rem; line-height: 1.5; margin: 0; white-space: pre-line;">${monster.desc}</p>
+            </div>
+            <div style="background: #162447; padding: 1rem; border-radius: 8px;">
+                <h4 style="color: #e43f5a; font-size: 1rem; margin: 0 0 5px 0;">효과 / 특징</h4>
+                <p style="color: #fff; font-size: 0.95rem; font-weight: bold; margin: 0;">${monster.effect}</p>
+            </div>
+        `;
+        container.appendChild(monsterBlock);
+    });
+
+    document.getElementById('monsterModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function closeMonsterModal() {
+            document.getElementById('monsterModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 어두운 배경 클릭 시 닫기
+        window.onclick = function(event) {
+            const charModal = document.getElementById('monsterModal');
+            const monsterModal = document.getElementById('monsterModal');
+            if (event.target == charModal) {
+                closeModal();
+            }
+            if (event.target == monsterModal) {
+                closeMonsterModal();
             }
         }
     </script>
