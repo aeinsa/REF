@@ -278,7 +278,29 @@ hr {
 .modal-info {
     flex-grow: 1;
 }
+/* 몬스터 모달 전용 바디 (위에서 아래로 세로 적층 및 스크롤) */
+.monster-modal-body {
+    display: flex;
+    flex-direction: column; /* 위에서 아래로 쌓기 */
+    gap: 1.2rem;            /* 요소들 사이의 간격 */
+    overflow-y: auto;       /* 내용이 많을 때 모달 전체 스크롤 생성 */
+    max-height: calc(85vh - 80px);
+    padding-right: 4px;
+}
 
+/* 몬스터 모달 내부 스크롤바 디자인 */
+.monster-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.monster-modal-body::-webkit-scrollbar-thumb {
+    background-color: #8a99ad;
+    border-radius: 4px;
+}
+
+.monster-modal-body::-webkit-scrollbar-thumb:hover {
+    background-color: #e43f5a;
+}
 /* 푸터 */
 footer {
     text-align: center;
