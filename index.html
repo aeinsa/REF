@@ -35,9 +35,16 @@
                 <img src="https://itimg.kr/2700/REF/MAP.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
             </div>
         </section> 
+        <!--/*지역*/-->
+       <section  id="dungeon" class="tab-content">
+        <h2>⚔️ 던전</h2>
+        <p style="color: #bbb; margin-bottom: 1.5rem;">💡스포주의.카드를 클릭하면 던전 몬스터 정보를 볼 수 있습니다.</p>
+        <div class="card_region">
+            </div>
+      </section>
     <!--/*지역*/-->
        <section  id="region" class="tab-content">
-        <h2>장소</h2>
+        <h2>🗺️ 장소</h2>
         <div class="card_region">
                 <h2>할렐루바</h2>
                 <img src="https://itimg.kr/2700/REF/RS/HA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
@@ -381,7 +388,7 @@
             document.getElementById('modalImg').src = imgSrc; 
             
             document.getElementById('charModal').style.display = 'flex';
-            document.body.style.overflow = 'block'; // 부모 스크롤 방지
+            document.body.style.overflow = 'hidden'; // 부모 스크롤 방지
         }
 
         // 모달 팝업창 닫기 함수
