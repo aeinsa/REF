@@ -326,4 +326,32 @@ footer {
         width: 92%;
         padding: 2rem 1.5rem;
     }
-}
+ /* 업그레이드된 테이블 스타일 */
+    .code-table {
+        width: 100%;
+        border-collapse: collapse; /* 선이 겹치지 않고 딱 맞아떨어지게 설정 */
+        background: #161616;
+        border: 1px solid #444; /* 테이블 전체 테두리 선 */
+        margin-top: 10px;
+    }
+
+    .code-table th {
+        background: #222;
+        color: #ffd95a;
+        padding: 12px;
+        border: 1px solid #444; /* 헤더 셀 선 */
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .code-table td {
+        padding: 12px 10px;
+        border: 1px solid #333; /* 데이터 셀 사이의 가로/세로 선 */
+        color: #ddd;
+        font-size: 13px;
+        vertical-align: middle;
+    }
+
+    .code-table tr:hover {
+        background: #1f1f1f;
+    }
