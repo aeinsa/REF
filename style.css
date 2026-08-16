@@ -1,357 +1,665 @@
-/* 기본 스타일 초기화 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세계관 & 캐릭터 소개</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #1a1a1d; /* 다크 테마 배경 */
-    color: #eeeeee;
-}
+    <header>
+        <h1>잊혀진 용사는 돌아온다</h1>
+        <p>그를 버린 세상은 그를 다시 불렀다. 또 한번의 구원을 위해서</p>
+    </header>
 
-/* 헤더 */
-header {
-    background: linear-gradient(135deg, #1f4068, #162447);
-    color: #fff;
-    text-align: center;
-    padding: 3rem 1rem;
-}
+    <nav class="tab-menu">
+        <button class="tab-btn active" onclick="switchTab('worldview')">🌌 세계관 보기</button>
+        <button class="tab-btn" onclick="switchTab('characters')">👥 캐릭터 보기</button>
+        <button class="tab-btn" onclick="switchTab('region')">🗺️ 장소</button>
+        <button class="tab-btn" onclick="switchTab('dungeon')">⚔️ 던전</button>
+    </nav>
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
+    <main class="container">
+        <!-- 세계관 소개 -->
+        <section id="worldview" class="tab-content active-content">
+            <div class="card">
+                <h2>🌌 세계관 (Worldview)</h2>
+                <hr>
+                <p>이능을 통해 능력을 발휘하며 살아가는 세계관. 탐욕과 분노, 세상에 대한 증오와 후회로 뭉쳐진 세상입니다. 마왕을 쓰러뜨리고 세상을 구원하였지만 황제의 탐욕으로 용사는 내쳐지게 됩니다.</p>
+                <p>유저는 마왕이 토벌 되었음에도 불구하고 다시 퍼져나가는 마기로 인해 오염되어버린 영혼들을 구원하는 이야기로 진행됩니다.</p>
+            </div>
+            <br>
+            <div class="card">
+                <h2>지도</h2>
+                <img src="https://itimg.kr/2700/REF/MAP.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+            </div>
+            <br>
+ <div class="card" style="padding: 20px;">
+    <h2>용어 및 전투등급 안내</h2>
+    <hr style="border: 0; height: 1px; background: #444; margin: 15px 0;">
+    <p><strong>이능:</strong> 개인이 지니고 있는 특수한 능력. 이능이 있다 하여 무조건 전투등급이 높지 않음.</p>
+    <p><strong>각성자:</strong> 이능을 지닌 자들에 대한 총칭</p>
+     <p><strong>넥서스:</strong> 원격으로 의뢰를 신청·접수하고, 사용자 간 소통이 가능한 통신용 수정구.</p>
+    <p><strong>전투등급:</strong> 개인의 무력의 지표입니다. 이능의 좋고 나쁨을 떠나 순수한 전체적인 강함으로 F~SSS급까지 존재하며 +차이도 큰 격차 존재</p>
+    
+    <div class="card" style="margin-top: 20px;">
+        <details>
+            <summary style="cursor: pointer; color: #ffd95a; font-weight: bold; font-size: 16px;">전투등급별 상세 설명 표 보기</summary>
+            <div style="margin-top: 15px;">
+                <!-- 테이블 자체에 테두리와 배경색을 강제로 적용 -->
+                <table style="width: 100%; border-collapse: collapse; background: #161616; border: 1px solid #555;">
+                    <thead>
+                        <tr style="background: #222;">
+                            <th style="width: 18%; padding: 12px; border: 1px solid #555; color: #ffd95a; text-align: center;">등급</th>
+                            <th style="width: 32%; padding: 12px; border: 1px solid #555; color: #ffd95a; text-align: center;">호칭</th>
+                            <th style="width: 50%; padding: 12px; border: 1px solid #555; color: #ffd95a; text-align: center;">주요 특징 및 능력</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #888; padding: 12px; border: 1px solid #444;">F급</td>
+                            <td style="color: #aaa; padding: 12px; border: 1px solid #444; text-align: center;">일반인</td>
+                            <td style="padding: 12px; border: 1px solid #444;">전투 능력 거의 없음</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #a3e4d7; padding: 12px; border: 1px solid #444;">E급</td>
+                            <td style="padding: 12px; border: 1px solid #444; text-align: center;">“초보 전투원”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">기본적인 전투 가능<br><span style="color: #aaa; font-size: 12px;">간단한 무기 사용 / 약한 이능 사용</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #85c1e9; padding: 12px; border: 1px solid #444;">D급</td>
+                            <td style="padding: 12px; border: 1px solid #444; text-align: center;">“숙련된 전투원”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">몬스터 사냥 가능 (약한 개체)<br><span style="color: #aaa; font-size: 12px;">기본적인 전투 센스 보유</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #bb8fce; padding: 12px; border: 1px solid #444;">C급</td>
+                            <td style="padding: 12px; border: 1px solid #444; text-align: center;">“상위 전투원”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">중형 몬스터 대응 가능<br><span style="color: #aaa; font-size: 12px;">마법 / 이능 본격 활용</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #f9e79f; padding: 12px; border: 1px solid #444;">B급</td>
+                            <td style="padding: 12px; border: 1px solid #444; text-align: center;">“도시 수호자”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">혼자서 소규모 부대 상대 가능<br><span style="color: #aaa; font-size: 12px;">도시 하나에서 핵심 전력</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #f8c471; padding: 12px; border: 1px solid #444;">A급</td>
+                            <td style="padding: 12px; border: 1px solid #444; text-align: center;">“국가급 전력”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">재해급 몬스터 대응 가능<br><span style="color: #aaa; font-size: 12px;">전투 하나로 지형이 바뀔 수도 있음</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #e59866; padding: 12px; border: 1px solid #444;">S급</td>
+                            <td style="padding: 12px; border: 1px solid #444; text-align: center;">“인간의 한계”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">단독으로 군대 상대 가능<br><span style="color: #aaa; font-size: 12px;">자연재해급 영향력</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #ec7063; padding: 12px; border: 1px solid #444;">SS급</td>
+                            <td style="padding: 12px; border: 1px solid #444; text-align: center;">“초월자”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">인간의 틀을 벗어난 존재<br><span style="color: #aaa; font-size: 12px;">존재 자체가 재앙, 대륙 단위 위협</span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; font-weight: bold; color: #ff6b6b; background: rgba(192, 57, 43, 0.15); padding: 12px; border: 1px solid #444;">SSS급</td>
+                            <td style="color: #ff6b6b; font-weight: bold; padding: 12px; border: 1px solid #444; text-align: center;">“마왕의 영역”</td>
+                            <td style="padding: 12px; border: 1px solid #444;">오직 마왕만 도달<br><span style="color: #ffaaaa; font-size: 12px;">손짓 한 번으로 산 붕괴 / 지역 소멸</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </div>
+</div>
+        </section> 
 
-/* 탭 메뉴 네비게이션 */
-.tab-menu {
-    display: flex;
-    justify-content: center;
-    background-color: #162447;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+        <!-- 던전 -->
+        <section id="dungeon" class="tab-content">
+            <h2>⚔️ 던전</h2>
+            <p style="color: #bbb; margin-bottom: 1.5rem;">💡 스포주의. 카드를 클릭하면 던전 몬스터 정보를 볼 수 있습니다.</p>
+            
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '타락한 숲의 정령', img: 'https://itimg.kr/2700/REF/DU/FO/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '마기로 인해 변질된 숲의 정령', effect: 'D급 / 상태 이상 유발' }
+            ],[
+                { name: '포식덩쿨', img: 'https://itimg.kr/2700/REF/DU/FO/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '움직이는 식물형 마수', effect: 'C급 / 구속 및 지속 피해' }
+            ],[
+                { name: '왜곡된 수호령', img: 'https://itimg.kr/2700/REF/DU/FO/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '숲을 지키던 존재가 뒤틀린 형태.고통과 증오가 섞여 끊임없이 저주 섞인 말을 되새긴다.', effect: 'A급 / 상태 이상 유발' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/FO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="잠든 숲의 균열" class="ratio-img">
+                </div>
+                <h3>잠든 숲의 균열</h3>
+                <p class="role">마기로 물들어버린 평화의 숲.</p>
+            </div>
+<br>
+        <!--황금 먹는 미궁-->
+          <div class="character-card" onclick="openMonsterModal([
+                { name: '골드 슬라임', img: 'https://itimg.kr/2700/REF/DU/GO/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '금화 형태를 띠는 슬라임', effect: 'D급 / 도주 성향 / 처치 시 재화 드랍' }
+            ],[
+                { name: '금속 수호병', img: 'https://itimg.kr/2700/REF/DU/GO/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '미궁을 지키는 자동 방어체', effect: 'B급 / 높은 물리 방어' }
+            ],[
+                { name: '골드 데버러', img: 'https://itimg.kr/2700/REF/DU/GO/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '금속과 재화를 흡수하며 성장하는 거대 개체', effect: 'A+급 / 재화를 흡수할수록 강화됨' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/GO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="황금 먹는 미궁" class="ratio-img">
+                </div>
+                <h3>황금 먹는 미궁</h3>
+                <p class="role">끝없이 이어지는 금속 구조의 미궁.</p>
+            </div>
+            <br>
+        <!--빙결설원-->
+        <div class="character-card" onclick="openMonsterModal([
+                { name: '빙결 망자', img: 'https://itimg.kr/2700/REF/DU/SN/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '얼어붙은 시체', effect: 'C급 / 파괴 후 재활성화' }
+            ],[
+                { name: '설원 포식자', img: 'https://itimg.kr/2700/REF/DU/SN/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '혹한에 적응한 마수', effect: 'B급 / 은신 및 기습 공격' }
+            ],[
+                { name: '빙결 사신', img: 'https://itimg.kr/2700/REF/DU/SN/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '냉기와 원한으로 이루어진 보스', effect: 'A급 / 타격지점 빙결화 / 상시 냉기방출' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/SN.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="빙결 설원" class="ratio-img">
+                </div>
+                <h3>빙결 설원</h3>
+                <p class="role">콜리비탄 안에 온난한 마을로 들어서기 이전에 펼쳐지는 빙결지대.</p>
+            </div>
+            <br>
+            <!--화룡의 땅-->
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '레드 와이번', img: 'https://itimg.kr/2700/REF/DU/FG/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '화룡이 먹다 남긴 먹이를 먹는 와이번. 떼로 무리지어 다니기에 위험하다.', effect: 'B급 / 공중 화염탄 발사, 비행, 낙하공격' }
+            ],[
+                { name: '화룡 이그니스', img: 'https://itimg.kr/2700/REF/DU/FG/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '화염을 품은 레드 드래곤. 강력한 비늘과 생명력', effect: 'S+급 / 공중 폭격 / 초고열 브레스 / 비행, 치악력' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/FG.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="화룡의 땅" class="ratio-img">
+                </div>
+                <h3>화룡의 땅</h3>
+                <p class="role">라미안 수인국 깊은 숲속 붉은 대지 아래 잠든 화룡의 거주지.</p>
+            </div>
+            <br>
+            <!--황혼의 지하성당-->
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '타락한 성기사', img: 'https://itimg.kr/2700/REF/DU/HO/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '신성력을 잃고 뒤틀린 기사', effect: 'B급 / 검술 / 약한 신성 마법 사용' }
+            ],[
+                { name: '타락한 대주교', img: 'https://itimg.kr/2700/REF/DU/HO/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '신성 마법과 저주를 동시에 사용하는 타락한 대주교', effect: 'S급 / 신성 마법 / 저주 동시 사용' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/HO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="황혼의 지하성당" class="ratio-img">
+                </div>
+                <h3>황혼의 지하성당</h3>
+                <p class="role">엘시온 교단 지하 깊숙이 숨겨진 고대 성당</p>
+            </div>
+            <br>
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '증오의 배회자', img: 'https://itimg.kr/2700/REF/DU/GC/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '죽음에 대한 분노와 세상에 대한 증오로 물들어 배회하는 망령. 무리지어 다니며 때로 덤벼든다.', effect: 'C급 / 무리지어 습격' }
+            ],[
+                { name: '후회의 문지기', img: 'https://itimg.kr/2700/REF/DU/GC/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '원념의 기사단장으로 가는 추격자들을 막는 문지기.', effect: 'B+급 / 마기가 깃든 사슬 소환 / 대상 구속' }
+            ],[
+                { name: '원념의 기사단장', img: 'https://itimg.kr/2700/REF/DU/GC/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '제국의 배신으로 죽은 선대의 기사단장.', effect: 'S+급 / 검술 / 마기 침식' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/GC.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="망자의 도시" class="ratio-img">
+                </div>
+                <h3>망자의 도시</h3>
+                <p class="role">마왕의 정수의 영향으로 잠들었던 사념들이 부활한 사지(死地)</p>
+            </div>
+            <br>
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '히드라 새끼', img: 'https://itimg.kr/2700/REF/DU/LA/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '재생 능력을 가진 개체', effect: 'B급 / 시간이 지날수록 강해짐' }
+            ],[
+                { name: '그랜드 히드라', img: 'https://itimg.kr/2700/REF/DU/LA/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '다수의 머리를 가진 초대형 마수', effect: 'SS+급 / 재생 / 독 / 압도적 체력, 타락한 화룡 이그니스 조차 뛰어넘는 흉폭함' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/LA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="시련의 미궁" class="ratio-img">
+                </div>
+                <h3>시련의 미궁</h3>
+                <p class="role">끊임없이 구조가 변화하는 초대형 미궁.</p>
+            </div>
+            <br>
+            <div class="character-card" onclick="openMonsterModal([
+                { name: '감찰드론', img: 'https://itimg.kr/2700/REF/DU/FB/A.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '던전 내부의 이능 마력을 탐지하고 시체처리기를 호출하는 기계.', effect: 'E급 / 이능 마력 탐지 / 시체처리기 호출' }
+            ],[
+                { name: '시체처리기', img: 'https://itimg.kr/2700/REF/DU/FB/B.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '광폭화한 실험체를 처리하는 살육기계.', effect: 'A급 / 고열광선 / 대량 배치' }
+            ],[
+                { name: '버스터 Mk.5', img: 'https://itimg.kr/2700/REF/DU/FB/C.webp?q=80&w=1216&h=832&auto=format&fit=crop', desc: '실험기록서를 지키는 베르데아 최종병기.', effect: 'SS+급 / 이능흡수 / 광역기 / 초고열 레이저' }
+            ])">
+                <div class="image-ratio-box">
+                    <img src="https://itimg.kr/2700/REF/DU/FB.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="금지된 서고" class="ratio-img">
+                </div>
+                <h3>금지된 서고</h3>
+                <p class="role">베르데아 제국이 마왕의 정수를 인간이 안전하게 다루게 만들기 위해 건설한 비밀 연구시설.</p>
+            </div>
+        </section>
 
-.tab-btn {
-    flex: 1;
-    max-width: 200px;
-    background: none;
-    border: none;
-    color: #8a99ad;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-}
+        <!-- 장소 -->
+        <section id="region" class="tab-content">
+            <h2>🗺️ 장소</h2>
+            <div class="card_region">
+                <h2>할렐루바</h2>
+                <img src="https://itimg.kr/2700/REF/RS/HA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>힐리네스의 인기 주점</h3>
+            </div>
+            <br>
+            <div class="card_region">
+                <h2>만정상회</h2>
+                <img src="https://itimg.kr/2700/REF/RS/MA.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>유텔피온의 모든 정보가 모인 최대 정보 상회</h3>
+            </div>
+            <br>
+            <div class="card_region">
+                <h2>엘시온 교단</h2>
+                <img src="https://itimg.kr/2700/REF/RS/CH.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>아티피온의 신성한 신앙이 깃든 성스러운 교단</h3>
+            </div>
+            <br>
+            <div class="card_region">
+                <h2>흑영암도</h2>
+                <img src="https://itimg.kr/2700/REF/RS/BL.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>세상을 굴복 시키기 위해 그림자 속에 칼날을 숨긴 악의 집단</h3>
+            </div>
+            <br>
+            <div class="card_region">
+                <h2>황실</h2>
+                <img src="https://itimg.kr/2700/REF/RS/RO.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>제국을 다스리는 가장 막강한 권력</h3>
+            </div>
+            <br>
+            <div class="card_region">
+                <h2>라미안 수인숲</h2>
+                <img src="https://itimg.kr/2700/REF/RS/AF.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>수인들이 힘을 합쳐 살아가는 공존의 숲</h3>
+            </div>
+            <br>
+            <div class="card_region">
+                <h2>데이브레이크</h2>
+                <img src="https://itimg.kr/2700/REF/RS/DK.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                 <h3>제국 제일 모험가 길드</h3>
+            </div>
+            <br>
+            <div class="card_region">
+                <h2>테르셀론 공작가</h2>
+                <img src="https://itimg.kr/2700/REF/RS/GB.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="이미지">
+                <h3>제국에서 가장 명망 높은 공작가</h3>
+            </div>
+        </section>
 
-.tab-btn:hover {
-    color: #fff;
-    background-color: #1f4068;
-}
+        <!-- 캐릭터 -->
+        <section id="characters" class="tab-content">
+            <h2>👥 주요 캐릭터 (Characters)</h2>
+            <p style="color: #bbb; margin-bottom: 1.5rem;">💡 캐릭터 카드를 클릭하면 상세 정보를 볼 수 있습니다.</p>
+            
+             <!-- /*1에를렌*/ -->
+            <div class="character-grid">
+                <div class="character-card" onclick="openModal('에를렌 루비에튼', '주점 점원 / 주점 할렐루바', '주점 할렐루바의 점원.', '나이: 24<br>소속: 주점 할렐루바<br><br>상세 스토리: 주점 할렐루바의 단골손님들에게 사랑받는 점원입니다.친절하고 겁이 많지만 용기낼 줄 아는 시골 아가씨이죠, 용사가 돌아올거라 굳게 믿고 있답니다.<br><br>능력:없음','https://itimg.kr/2700/REF/A/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+          <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/A/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="에를렌 루비에튼" class="ratio-img">
+                  </div>
+                    <h3>에를렌 루비에튼</h3>
+                    <p class="role">주점 점원 / 주점 할렐루바</p>
+                </div>
+          </div>
+           <!-- /*에를렌*/ -->
 
-.tab-btn.active {
-    color: #fff;
-    background-color: #e43f5a; /* 활성화 포인트 컬러 */
-    border-bottom: 4px solid #fff;
-}
+          <!-- /*2아가텔*/ -->
+       <div class="character-grid">
+                <div class="character-card" onclick="openModal('아가텔', '천뢰 / 무소속', '콜리비탄 숨겨진 마을에서 살아가는 전 천광 기사단 단장.', '나이:32<br><br>상세 스토리: 용사를 존경하고 연모했지만 아무것도 못한 채 그가 떠나가는 것을 지켜봐야 했던 과거를 후회하며 살아가는 옛 전우입니다.<br><br>능력<br>뇌전:검에 번개와 전격을 두르고 공격 시 빠른속도와 더불어 주변으로 연쇄 피해를 입히며 전투가 지속될수록 위력과 범위가 점점 증가하고 지정한 위치에 낙뢰를 꽂을 수도 있다.','https://itimg.kr/2700/REF/B/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/B/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="아가텔" class="ratio-img">
+                    </div>
+                    <h3>아가텔 루테비스</h3>
+                    <p class="role">무소속 / 전 천광기사단장</p>
+                </div>
+            </div>
+        <!-- /*아가텔*/ -->
 
-/* 메인 레이아웃 */
-.container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    min-height: 50vh;
-}
+  <!-- /*13레무트*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('레무트', '촌장 / 에르네스', '에르네스의 촌', '나이:78<br><br>상세 스토리:에르네스가 고향이며 마을을 위해 용병이 되고 이름있는 용병으로 활동했으나 20년전 고아였던 어린 켈리를 구해주려 강한 마수와 싸우는 도중 눈을 잃고 은퇴하게 됨.다행히 모두가 그의 노고와 공헌을 인정하며 마을 촌장이 된다.켈리가 만정상주가 된 것만 알고 괜히 부담주지 않기 위해 직접 찾아가거나 하지는 않습니다.<br><br>능력<br>젊을 적 신체강화계열의 이능을 썼지만 현재는 노화로 인한 무능력자입니다.','https://itimg.kr/2700/REF/N/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/N/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="레비" class="ratio-img">
+                    </div>
+                    <h3>레무트 아피스테온</h3>
+                    <p class="role">촌장 / 에르네스</p>
+                </div>
+            </div>
+        <!-- /*레무트*/ -->   
 
-.tab-content {
-    display: none;
-    animation: fadeInEffect 0.4s ease;
-}
+                                 <!-- /*19루다비스*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('루다비스', '황제 / 황실', '현 천광기사단 단.', '나이:37<br><br>상세 스토리:제국의 황제.자신만의 이득을 1순위로 한다.한때 황제 취임 후까지만 하더라도 진심으로 제국을 위해 최선을 다했으며 제국 백성들의 노고를 이해하며 이에 따른 여러가지 좋은 제도를 도입하고 황가로부터의 배움과 통찰력을 바탕으로 더 살기 좋은 환경을 만들기도 한 능력 있는 인물이지만 마족으로 아내인 제국의 왕비를 잃게 된 후 하나 남은 딸까지 잃지 않기 위해 자기중심적이고 방어적인 태도를 지니게 되었습니다.<br><br>능력<br>어명:황가에서 장남만이 대대로 전해져 오는 이능.자신의 입으로 한 모든 말들에 대해 타인은 의심하지 않고 인지가 왜곡되어 S급 이하의 인물들은 의심없이 그대로 믿게 된다.','https://itimg.kr/2700/REF/P/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/P/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="루다비스" class="ratio-img">
+                    </div>
+                    <h3>루다비스 폰 아르테미아</h3>
+                    <p class="role">황제 / 황실</p>
+                </div>
+            </div>
+        <!-- /*루다비스*/ --> 
 
-.tab-content.active-content {
-    display: block;
-}
+                             <!-- /*8아빌레아*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('아빌레아', '황녀 / 황실', '제국황실의 황녀', '나이:20<br><br>상세 스토리:성인이 되기 이전 단신으로 마왕을 쓰러트리고 제국을 구원한 용사에게 깊은 감사를 느끼면 친부인 황제가 어떤 상을 내릴지 기대했지만 오명과 추방이란 말에 경악 거세게 반발했지만 자신을 위해서 였다는 황제의 말에 죄책감을 품고 살아가고 있습니다.<br><br>능력<br>미래예지(긍정):가까운 시일 내에 발생하는 긍정적인 미래를 볼 수 있는 능력.','https://itimg.kr/2700/REF/H/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/H/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="아빌레아" class="ratio-img">
+                    </div>
+                    <h3>아빌레아 폰 아르테미아</h3>
+                    <p class="role">황녀 / 황실</p>
+                </div>
+            </div>
+ <!-- /*17테르센*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('테르센', '신속 / 천광기사단', '현 천광기사단 단장', '나이:37<br><br>상세 스토리:전 부기사단장에서 아가텔 탈퇴 이후 기사단장이 되었습니다.뛰어난 실력을 지니고 모두의 기대를 한몸에 받는 유망주이자 젊은 나이에 천광기사단이된 최정예지만 후배로 들어와 자신을 제치고 제국의 최강의 검이라고 일컫는 기사단장이 된 것에 대해 엄청난 열등감을 품었으며 그녀가 탈퇴한 후 온갖 위선과 권력으로 기사단을 휘어잡습니다..<br><br>능력<br>신속:음속을 뛰어넘는 엄청난 속도의 속검을 펼친다.대부분 검을 뽑기도 전에 제압당하게 된다.','https://itimg.kr/2700/REF/R/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/R/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="테르센" class="ratio-img">
+                    </div>
+                    <h3>테르센 아비우트</h3>
+                    <p class="role">신속 / 천광기사단</p>
+                </div>
+            </div>
+        <!-- /*테르센*/ --> 
 
-@keyframes fadeInEffect {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+         <!-- /*4델리엔*/ -->
+       <div class="character-grid">
+                <div class="character-card" onclick="openModal('델리엔', '흑영의 여제 / 흑영암도', '흑영암도 수장.', '나이:34<br><br>상세 스토리:계급이 아닌 강함으로 정점에 서야 한다는 사상을 지닌 빈민가 출신의 인물로 마왕토벌 이후 기회를 잡아 1년만에 가장 거대한 암흑조직인 흑영암도를 세운 인물입니다.<br><br>능력<br>흑영:그림자를 매개로 가시나 영물을 만들어 내는 능력으로 자신 뿐만 아니라 타인에게도 시전이 가능하며 발동 속도도 빠르기에 대부분 반응조차 못하고 당하는 능력이다.밤이 될 수록 강해진다.','https://itimg.kr/2700/REF/D/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/D/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="델리엔" class="ratio-img">
+                    </div>
+                    <h3>델리엔 팔디온</h3>
+                    <p class="role">흑영의 여제 / 흑영암도</p>
+                </div>
+            </div>
+              <!-- /*18카이데우스*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('카이데우스', '폭군 / 흑영암도', '흑영암도의 1번 대장.', '나이:30<br><br>상세 스토리:대장들중 가장 선임이자 연장자로 어린 시절 부모에게 노예로 팔려버린 후 자신을 사들인 주인을 살해한 이후 용병이 되었습니다.용병은 물론 웬만한 간부급 기사들도 당해낼 수 없었지만 실력에 맞지 않은 대우에 고용자를 살해한 후 지명수배 된 후로 암흑영도 수장인 델리온에게 가장 먼저 스카웃 되고 초창기부터 그 자리를 지키며 자신의 존재를 그대로 인정해준 델리온에게 절대 충성하며 어떠한 명령이나 위협 또한 마다하지 않으며 전투시에는 초괴력을 통한 무자비한 파괴를 거리낌없이 저지르며 위협이 될 가능성만으로도 상대를 제거하며,그 과정에서 주변 피해 따위는 고려하지 않습는다.<br><br>능력<br>초괴력:몸보다 서너배는 큰 바위를 한손으로 들어 강속구로 던지고 강철을 스트로폼 마냥 우그러뜨리는 수준의 막대한 괴력.심플하지만 강력하며 이러한 신체강도등과 폭발력을 통해 많은 것들이 가능한 이능','https://itimg.kr/2700/REF/Q/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/Q/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="카이데우스" class="ratio-img">
+                    </div>
+                    <h3>카이데우스 아스텔리온</h3>
+                    <p class="role">폭군 / 흑영암도</p>
+                </div>
+            </div>
+        <!-- /*카이데우*/ --> 
 
-h2 {
-    color: #fff;
-    margin-bottom: 1rem;
-}
 
-hr {
-    border: 0;
-    height: 1px;
-    background: #444;
-    margin-bottom: 1rem;
-}
+               <!-- /*6랜디아*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('랜디아', '강철의 인형술사 / 흑영암도', '흑영암도의 2번 대장.', '나이:26<br><br>상세 스토리:원래 이능으로 유명한 백작가 출신이고 젊은 나이에도 수준급 이상의 이능 실력으로 유망한 가주 후보였지만 귀족생활에 따분함을 느끼고 가문을 나간 이후.델리엔에게 스카웃되어 흑영암도에 입단했습니다.매사 여유롭고 인상도 순하지만 사람을 부수는 것이나 목숨을 해치는 것에 희열을 느낍니다.<br><br>능력<br>ㅇ메탈골렘:강철로 이루어진 골렘들을 형성한다.최대 4마리 까지 제어할 수 있으며 시전자의 마력이 공급되는 한 부서져도 재생한다.','https://itimg.kr/2700/REF/F/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/F/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="랜디아" class="ratio-img">
+                    </div>
+                    <h3>랜디아 메디텔라</h3>
+                    <p class="role">강철의 인형술사 / 흑영암도</p>
+                </div>
+            </div>
+        <!-- /*랜디아*/ -->
 
-/* 세계관 카드 */
-.card {
-    background: #1f4068;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-.card img {
-     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-}
-.card_region {
-    background: #1f4068;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-/* 캐릭터 그리드 및 카드 */
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-.card_region img {
-     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-}
-.character-card {
-    background: #1f4068;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        <!-- /*5코빌르*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('코빌르', '허무의 사냥꾼 / 흑영암도', '흑영암도의 3번 대장', '나이:25<br><br>상세 스토리:정보 길드 출신의 추적자로, 직접 싸우기보다는 관찰과 분석을 통해 표적을 제거해온 인물로 싸우지 않고 끝내는 것을 선호하며, 상대의 습관과 패턴을 집요하게 파고듭니다. 흑영암도의 방식에 흥미를 느껴 스스로 합류했으며 현재는 3번 대장으로서 암살, 추적, 내부 정리를 담당합니다.<br><br>능력<br>트레이서:마력의.흐름과 움직임을 감지하고 추적하며 마력탄을 소환하여 대상에게 타겟팅 후 명중이나 파훼 직전까지 멈추지않는 이능','https://itimg.kr/2700/REF/E/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/E/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="코빌르" class="ratio-img">
+                    </div>
+                    <h3>코빌르 아델슨</h3>
+                    <p class="role">허무의 사냥 / 흑영암도</p>
+                </div>
+            </div>
+        <!-- /*코빌르*/ -->
 
-.character-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(228,63,90,0.3); /* 호버 시 붉은 은은한 광원 효과 */
+                       <!-- /*7레벨리타*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('레벨리타', '순백의 성녀 / 엘시온 교단', '엘시온 교단의 2대 성녀', '나이:23<br><br>상세 스토리:신을 모시는 자에 대한 기품이 몸에 배여 있고 실질적 직위는 황실 다음가는 권력을 지닙니다.(공작 이상). 1대 성녀가 성녀직위를  포기한 후 새로운 신탁을 받아 2대 성녀가 되었고 정녕 용사가 마왕의 힘을 탐했을지에 대하여 신념이 흔들리고 있습니다.<br><br>능력<br>신탁:강력한 신성력을 바탕으로 마물이나 사악한 자들에 벌하는 빛의 심판을 내린다.','https://itimg.kr/2700/REF/G/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/G/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="레벨리타" class="ratio-img">
+                    </div>
+                    <h3>레벨리타 세인터루스</h3>
+                    <p class="role">순백의 성녀 / 엘시온 교단</p>
+                </div>
+            </div>
+        <!-- /*레벨리타*/ -->
+  
+        <!-- /*아빌레아*/ -->
+                                       <!-- /*9아이렐*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('아이렐', '심판자 / 엘시온 교단', '엘시온 교단의 이단 심문관', '나이:23<br><br>상세 스토리:레벨리타와 수녀 시절부터 함께한 소꿉친구이며 매우 친하고 친구이상으로 라빌레타를 사랑한다.그렇기에 그녀에 안전에 특히 민감하고 그녀를 위해서라면 죽음도 서슴치 않습니다.용사가 마왕의 힘을 흡수하여 재앙이 되려했다는 오명에 배신감과 분노를 느끼면서도 마왕으로부터 인류를 구하기 위해 희생을 망설이지 않던 그 옛모습에 혼란을 느낍니다.<br><br>능력<br>심판:빛으로 이루어진 심판의 검을 소환하는 능력.대상의 쌓인 업보에 따라 강해지며 아무리 착하게 산 인간이라도 인간이라는 것 자체에서 오는 업보로 인해 강해진다.','https://itimg.kr/2700/REF/I/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/I/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="아이렐" class="ratio-img">
+                    </div>
+                    <h3>아이렐 그루텔</h3>
+                    <p class="role">심판자 / 엘시온 교단</p>
+                </div>
+            </div>
+        <!-- /*아이렐*/ -->
+        <!-- /*21리베시아*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('리베시아', '1대 성녀 / 엘시온 교단', '레벨리타의 의붓언니', '나이:26<br><br>상세 스토리:3년전 마왕이 세상에 나타나고 부터 생겨는 초대성녀.외부로는 알려져 있지 않은 레벨리타의 의붓언니.폴가튼 랜드의 진실의 거울을 찾기 위해 떠나있음,용사의 희생을 더러운 오명으로 뒤집어 쓰고 그 진실을 철저하게 숨기는 제국에게 대항 하기 위해 엘시온 교단의 안위만을 중요시하는 교단에게 대항하기 위해 레벨리타에게 사과의 말과 성녀직을 물려주고 교단을 떠나게 되었습니다.<br><br>능력<br>신성력이 깃든 성가를 통해 악을 멸하는 노래를 부른다.범위가 넓어질 수록 위력이 약해지며 한곳으로 집중해서 공격하는것도 가능하다.','https://itimg.kr/2700/REF/V/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/V/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="리베시아" class="ratio-img">
+                    </div>
+                    <h3>리베시아 세인터루스</h3>
+                    <p class="role">초대 성녀 / 전 엘시온 교단</p>
+                </div>
+            </div>
+        <!-- /*카이데우*/ --> 
+  
+<!-- /*14레번*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('레번', '길드마스터 / 데이브레이크', '융왕', '나이:45<br><br>상세 스토리:데이브레이크의 길드마스터. 강한 카리스마와 실력을 겸비해 길드를 최상위 반열로 이끈 인물이지만 마족 대전쟁에서 제국을 수호한 영웅이자 용사의 전우이며 세계를 구원해준 용사가 마왕의 정수를 흡수한다는 말도안된다는 이야기에 의심하지만 제국 소속으로 용사에게 오명을 의심할 수 없는 현실에 환멸감과 깊은 죄책감을 느끼고 있다.<br><br>능력<br>설랑화(雪狼化):은빛 냉기를 두른 거대한 설랑의 형태가 되어 주변을 얼려버린다.모든 신체능력이 상승하면 주변을 차갑게 만들어 적의 기동을 약화시킨다','https://itimg.kr/2700/REF/S/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/S/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="레번" class="ratio-img">
+                    </div>
+                    <h3>레번 반드레아</h3>
+                    <p class="role">길드마스터 / 데이브레이크</p>
+                </div>
+            </div>
+        <!-- /*레번*/ --> 
+            <!-- /*10타르샤*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('타르샤', '폭성 / 데이브레이크', '데이브레이크 레번의 입양 딸.', '나이:23<br><br>상세 스토리:데이브레이크의 길드장 레번의 입양 딸로 갓난아기 시절 길드앞에 버려진 타르샤를 데려와 키워지게 됩니다.레번을 존경하고 사랑하며 언제나 그 처럼되고 싶어 각성 이후 15살에 나이에 C급 몬스터 오우거를 1대1로 싸워 이기고 이때 에 작은 흉터가 생깁니다.기본적인 무기없는 격투술에 능하며 주먹으로 C급 정도는 으깨버릴 수 있습니다.<br><br>능력<br>지정 폭파:마력의 표식을 새긴 위치에 폭파를 일으키는 능력으로 반경 200M내에서 발동 가능하며 최소 수류탄.최대 압축시 산에 크리에이터가 날 만큼에 파괴력을 발휘가능.','https://itimg.kr/2700/REF/J/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/J/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="아이렐" class="ratio-img">
+                    </div>
+                    <h3>타르샤 반드레아</h3>
+                    <p class="role">폭성 / 데이브레이크</p>
+                </div>
+            </div>
+        <!-- /*타르샤*/ -->
+                   
+                    <!-- /*11레비*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('레비', '안내원 / 데이브레이크', '데이브레이크의 토끼 안내원.', '나이:23<br><br>상세 스토리:데이브레이크의 안내원으로 본래 20살 이전까지 라미안에서 살고 있었으나.다른 수인들에 비해 신체능력도 약하고 그렇다고 전투를 좋아하거나 딱히 재능이 있는 것도 아니기에 고민하다 결국 스스로 라미안을 떠나 수인족들을 도울 수 있는 방법을 찾아나서게 되었고 데이브레이크의 안내원이 되었습니다.<br><br>능력<br>없음.타르샤에게 격투술을 배워 일반인보단 훨씬 강함','https://itimg.kr/2700/REF/K/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/K/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="레비" class="ratio-img">
+                    </div>
+                    <h3>레비 파렛트</h3>
+                    <p class="role">안내원 / 데이브레이크</p>
+                </div>
+            </div>
+            <!-- /*3카헬른*/ -->
+       <div class="character-grid">
+                <div class="character-card" onclick="openModal('카헬른', '금지의 영애 / 테르셀론 공작가', '테르셀론 공작가 영애.', '나이:24<br><br>상세 스토리:오만하고 독선적이며 선민사상이 강하게 각인되어 있으며 용사를 추방시킨 과거가 옳다 생각하면서도 그 선택이 옳았을지를 의심하고 있습니다.<br><br>능력<br>염동력:자신의 몸무게보다 가벼운 물체를 띄워 날릴 수 있으며 최대 속력은 음속에 가까워진다.','https://itimg.kr/2700/REF/C/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/C/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="카헬른" class="ratio-img">
+                    </div>
+                    <h3>카헬른 테르셀론</h3>
+                    <p class="role">금지의 영애 / 테르셀론 공작가</p>
+                </div>
+            </div>
+        <!-- /*카헬른*/ -->
+
+        <!-- /*클레어*/ -->    
+                    <!-- /*12클레어*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('클레어', '메이드 / 테르셀론 공장', '테르셀론 공작가 전담 메이드.', '나이:23<br><br>상세 스토리:테르셀론가 카헬른의 전담 메이드로 3년째 근무하고 있다.카헬른에게 매일 같이 구박받고 혼나지만서도 3년 내내 잘버티는 어찌보면 강철멘탈의 인물 입니다.맨날 혼내는 카헬른을 미워하기보다는 만족시키지 못해 미안함을 가지는 천성이 타고난 메이드죠.<br><br>능력<br>클리닝:청소 능력.얼룩이나 더러워진 것들을 새것처럼 깨끗히 만들 수 있다.','https://itimg.kr/2700/REF/L/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/L/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="클레" class="ratio-img">
+                    </div>
+                    <h3>클레어 레비넌트</h3>
+                    <p class="role">메이드 / 테르셀론 공작가</p>
+                </div>
+            </div>
+     
+        <!-- /*클레어*/ -->      
+                             
+                                    <!-- /*15바이터*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('루미', '설랑 / 라미안 수인국', '라미안 수인국의 족장', '나이:47<br><br>상세 스토리:수인족 족장.화룡 이그니스와 조상 시절 부터 오랜 세월 대를 이어 친우처럼 지내온 관계.마족 대전쟁에서 라미안을 지나쳐 제국으로 향하는 마족군단으로 부터 동족과 딸을 지키지며 인간들을 위해 싸웠으나 아내가 결국 죽게 되었습니다.하지만 루다비스는 그들의 업적을 인정하지 않았고 아내의 희생이 물거품이 되어 인간 자체를 혐오하며 전우 였던 아가텔,레번,용사를 제외한 누구도 인간을 믿지 않게 됩니다.<br><br>능력<br>수인화(펜릴):전설의 늑대 펜릴로 모습을 변신다.발톱질 한번에 바위가 공기와 함께 갈라지고.초월적인 오감과 신체능력.내구력 등이 비약적으로 상승한다.','https://itimg.kr/2700/REF/T/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/T/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="바이터" class="ratio-img">
+                    </div>
+                    <h3>바이터 아필레온</h3>
+                    <p class="role">낭왕 / 라미안 수인국</p>
+                </div>
+            </div>
+        <!-- /*바이터*/ --> 
+
+         <!-- /*16루미*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('루미', '설랑 / 라미안 수인국', '라미안 수인국의  차기족장', '나이:21<br><br>상세 스토리:바이터 아필레온의 외동딸이자 차세대 낭왕 후보 아버지를 대신해 현장을 뛰어다니며 수인국을 지탱하고 있다.용사가 재앙이었다는 말을 믿지 않는다.어머니는 빙결 설원의 수인으로 3년전 대마족 전쟁에서 사망했습니다.이로 인해 인간 불신이 유독 짙자만 동족에게만큼은 매우 다정하고 아이들을 좋아하며 약자를 지나치지 못한합니다.레비와 절친한 사이이며 순수 격투파.능력과 발톱,감각을 통해 전투하는 방식.<br><br>능력<br>설랑화(雪狼化):은빛 냉기를 두른 거대한 설랑의 형태가 되어 주변을 얼려버린다.모든 신체능력이 상승하면 주변을 차갑게 만들어 적의 기동을 약화시킨다.','https://itimg.kr/2700/REF/M/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/M/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="루미" class="ratio-img">
+                    </div>
+                    <h3>루미 아필레온</h3>
+                    <p class="role">설랑 / 라미안 수인국</p>
+                </div>
+            </div>
+        <!-- /*루미*/ --> 
+
+                                         <!-- /*20켈리*/ -->
+               <div class="character-grid">
+                <div class="character-card" onclick="openModal('켈리', '만정상주 / 만정상회', '만정상회의 주인', '나이:36<br><br>상세 스토리:현재 가장 큰 정보상을 총괄하는 만정상의 주인.유텔피온 구석에서 부모에게 노예로 팔린 후 겨우 도망쳐나온뒤로 막일,식당일,심지어 창녀와 같이 안해본 일 없이 살아왔습니다.그렇게 하루하루 몸을 팔며 살던 중 우연히 손님에게 들은 말을 가지고 있다 나중에 그 적대 세력에게 알려주며 거기에 대한 보상을 받은 것을 계기로 정보가 돈이 된다는 사실을 깨닫고 그 이후부터 무슨일이 있더라도 대담하고 망설임 없이 정보를 긁어 모으며 지금의 자리에 올라선 인물입니다.<br><br>능력<br>어명:황가에서 장남만이 대대로 전해져 오는 이능.자신의 입으로 한 모든 말들에 대해 타인은 의심하지 않고 인지가 왜곡되어 S급 이하의 인물들은 의심없이 그대로 믿게 된다.','https://itimg.kr/2700/REF/O/1.webp?q=80&w=832&h=1216&auto=format&fit=crop')">
+                    <div class="image-ratio-box">
+                        <img src="https://itimg.kr/2700/REF/O/0.webp?q=80&w=1216&h=832&auto=format&fit=crop" alt="켈리" class="ratio-img">
+                    </div>
+                    <h3>켈리 티르시아</h3>
+                    <p class="role">만정상주 / 만정상회</p>
+                </div>
+            </div>
+        <!-- /*켈리*/ --> 
+                  </section>                                  
+    </main>
+
+    <!-- 캐릭터 모달 -->
+    <div id="charModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <div class="image-ratio-box2">
+                        <img id="modalImg" src="" alt="캐릭터 상세 이미지" class="ratio-img">
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalName">캐릭터 이름</h2>
+                    <p id="modalRole" class="role">역할</p>
+                    <p id="modalDesc" style="margin-bottom: 1rem; font-weight: bold;"></p>
+                    <hr>
+                    <p id="modalDetail" style="margin-top: 1rem; color: #ccc;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 몬스터 모달 -->
+    <div id="monsterModal" class="modal">
+        <div class="modal-content" style="max-height: 80vh; display: flex; flex-direction: column;">
+            <span class="close-btn" onclick="closeMonsterModal()">&times;</span>
+            <div id="monsterListContainer" style="overflow-y: auto; overflow-x: hidden; padding-right: 5px; display: flex; flex-direction: column; gap: 30px;">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 내 창작 세계관 Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // 탭 메뉴 전환 함수
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active-content'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active-content');
+            event.currentTarget.classList.add('active');
+        }
+
+        // 모달 팝업창 열기 함수
+        function openModal(name, role, desc, detail, imgSrc) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalRole').innerText = role;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalDetail').innerHTML = detail;
+            
+            document.getElementById('modalImg').src = imgSrc; 
+            
+            document.getElementById('charModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 모달 팝업창 닫기 함수
+        function closeModal() {
+            document.getElementById('charModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 어두운 배경 클릭 시 닫기
+        window.onclick = function(event) {
+            const charModal = document.getElementById('charModal');
+            const monsterModal = document.getElementById('monsterModal');
+            if (event.target == charModal) {
+                closeModal();
+            }
+            if (event.target == monsterModal) {
+                closeMonsterModal();
+            }
+        }
+
+        // 전체 몬스터 목록을 모달에 띄우는 함수
+        // 매개변수를 가변 인자(...args) 또는 3개 다 받도록 수정합니다.
+function openMonsterModal(...monsterArrays) {
+    const container = document.getElementById('monsterListContainer');
+    container.innerHTML = '';
+
+    // 전달받은 여러 개의 배열을 하나로 합침 ([ [A], [B], [C] ] -> [A, B, C])
+    const allMonsters = monsterArrays.flat();
+
+    allMonsters.forEach(monster => {
+        const monsterBlock = document.createElement('div');
+        monsterBlock.style.cssText = 'background: #1f4068; padding: 1.5rem; border-radius: 12px; display: flex; flex-direction: column; gap: 15px;';
+
+        monsterBlock.innerHTML = `
+            <h2 style="color: #fff; font-size: 1.6rem; margin: 0;">${monster.name}</h2>
+            <div class="image-ratio-box" style="background: #111; border-radius: 8px; overflow: hidden;">
+                <img src="${monster.img}" alt="${monster.name}" class="ratio-img" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div style="background: #162447; padding: 1rem; border-radius: 8px;">
+                <h4 style="color: #e43f5a; font-size: 1rem; margin: 0 0 5px 0;">설명</h4>
+                <p style="color: #ccc; font-size: 0.95rem; line-height: 1.5; margin: 0; white-space: pre-line;">${monster.desc}</p>
+            </div>
+            <div style="background: #162447; padding: 1rem; border-radius: 8px;">
+                <h4 style="color: #e43f5a; font-size: 1rem; margin: 0 0 5px 0;">등급 / 특징</h4>
+                <p style="color: #fff; font-size: 0.95rem; font-weight: bold; margin: 0;">${monster.effect}</p>
+            </div>
+        `;
+        container.appendChild(monsterBlock);
+    });
+
+    document.getElementById('monsterModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
+function closeMonsterModal() {
+            document.getElementById('monsterModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-.character-card h3 {
-    margin-bottom: 0.3rem;
-}
-
-.role {
-    font-size: 0.9rem;
-    color: #e43f5a;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-/* ------------------------------------------------------------
-   ⭐ 이미지 비율 유지 박스 핵심 스타일 영역 (수정 및 정리 완료)
------------------------------------------------------------- */
-
-/* 1. 메인 카드용: 1216x832 가로형 비율 박스 */
-.image-ratio-box {
-    width: 100%;
-    padding-top: 68.42%; /* (832 / 1216) * 100% 가로형 비율 */
-    position: relative;
-    background-color: #162447;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-}
-
-/* 2. 모달 팝업용: 좌측 이미지 부모 컨테이너 너비 제한 */
-.modal-img-container {
-    width: 240px;        /* 세로형 이미지가 이쁘게 보일 수 있도록 가로폭 고정 */
-    flex-shrink: 0;      /* 크기 축소 방지 */
-}
-
-/* 3. 모달 팝업용: 832x1216 세로형 비율 박스 */
-.image-ratio-box2 {
-    width: 100%;
-    padding-top: 146.15%; /* (1216 / 832) * 100% 세로형 비율 유지 */
-    position: relative;
-    background-color: #162447;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* 4. 가로/세로 박스 내부에 들어가는 실제 이미지 공통 설정 */
-.image-ratio-box .ratio-img,
-.image-ratio-box2 .ratio-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;    /* 비율 깨짐 없이 가득 채움 */
-}
-
-/* 가로형은 중앙 기준, 세로형(팝업)은 얼굴이 안 잘리게 위쪽 기준 정렬 */
-.image-ratio-box .ratio-img {
-    object-position: center;
-}
-.image-ratio-box2 .ratio-img {
-    object-position: top center;
-}
-
-/* ------------------------------------------------------------ */
-
-/* 모달 팝업창 레이아웃 */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    background-color: #162447;
-    margin: 8% auto;
-    padding: 2.5rem;
-    border-radius: 16px;
-    width: 85%;
-    max-width: 750px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    animation: modalSlide 0.3s ease-out;
-
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-@keyframes modalSlide {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 2.5rem;
-    color: #8a99ad;
-    cursor: pointer;
-}
-
-.close-btn:hover {
-    color: #fff;
-}
-
-.modal-body {
-   display: flex;
-    /**flex-direction: column; /* 위에서 아래로 쌓이도록 변경 */
-    gap: 1.5rem; /* 요소들 간의 간격 */
-    margin-top: 1rem;
-    overflow-y: auto; /* 내용이 넘칠 경우 스크롤 생성 */
-    max-height: calc(85vh - 100px); /* 패딩 제외한 스크롤 영역 */
-    padding-right: 6px; /* 스크롤바와 내용 간격 */
-}
-/* 우측 스크롤바 디자인 (웹킷 브라우저용) */
-.modal-body::-webkit-scrollbar {
-    width: 8px;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-    background-color: #8a99ad;
-    border-radius: 4px;
-}
-
-.modal-body::-webkit-scrollbar-thumb:hover {
-    background-color: #e43f5a;
-}
-.modal-info {
-    flex-grow: 1;
-}
-/* 몬스터 모달 전용 바디 (위에서 아래로 세로 적층 및 스크롤) */
-.monster-modal-body {
-    display: flex;
-    flex-direction: column; /* 위에서 아래로 쌓기 */
-    gap: 1.2rem;            /* 요소들 사이의 간격 */
-    overflow-y: auto;       /* 내용이 많을 때 모달 전체 스크롤 생성 */
-    max-height: calc(85vh - 80px);
-    padding-right: 4px;
-}
-
-/* 몬스터 모달 내부 스크롤바 디자인 */
-.monster-modal-body::-webkit-scrollbar {
-    width: 8px;
-}
-
-.monster-modal-body::-webkit-scrollbar-thumb {
-    background-color: #8a99ad;
-    border-radius: 4px;
-}
-
-.monster-modal-body::-webkit-scrollbar-thumb:hover {
-    background-color: #e43f5a;
-}
-/* 푸터 */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #162447;
-    color: #8a99ad;
-    font-size: 0.9rem;
-    margin-top: 4rem;
-}
-
-/* 모바일 반응형 대응 (정리 완료) */
-@media (max-width: 680px) {
-    .modal-body {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    .modal-img-container {
-        width: 65%; /* 모바일 화면에서 세로형 이미지가 너무 거대해지지 않도록 가로폭 제한 */
-    }
-    .modal-content {
-        margin: 5% auto;
-        width: 92%;
-        padding: 2rem 1.5rem;
-    }
- /* 업그레이드된 테이블 스타일 */
-    .code-table {
-        width: 100%;
-        border-collapse: collapse; /* 선이 겹치지 않고 딱 맞아떨어지게 설정 */
-        background: #161616;
-        border: 1px solid #444; /* 테이블 전체 테두리 선 */
-        margin-top: 10px;
-    }
-
-    .code-table th {
-        background: #222;
-        color: #ffd95a;
-        padding: 12px;
-        border: 1px solid #444; /* 헤더 셀 선 */
-        font-size: 14px;
-        text-align: center;
-    }
-
-    .code-table td {
-        padding: 12px 10px;
-        border: 1px solid #333; /* 데이터 셀 사이의 가로/세로 선 */
-        color: #ddd;
-        font-size: 13px;
-        vertical-align: middle;
-    }
-
-    .code-table tr:hover {
-        background: #1f1f1f;
-    }
+        // 어두운 배경 클릭 시 닫기
+        window.onclick = function(event) {
+            const charModal = document.getElementById('monsterModal');
+            const monsterModal = document.getElementById('monsterModal');
+            if (event.target == charModal) {
+                closeModal();
+            }
+            if (event.target == monsterModal) {
+                closeMonsterModal();
+            }
+        }
+    </script>
+</body>
+</html>
