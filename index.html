@@ -30,9 +30,104 @@
                 <p>유저는 마왕이 토벌 되었음에도 불구하고 다시 퍼져나가는 마기로 인해 오염되어버린 영혼들을 구원하는 이야기로 진행됩니다.</p>
             </div>
             <br>
+<!-- 지도 이미지 카드 -->
             <div class="card">
                 <h2>지도</h2>
-                <img src="https://itimg.kr/2700/REF/MAP.webp" alt="이미지">
+                <img src="https://itimg.kr/2700/REF/MAP.webp" alt="세계관 지도">
+            </div>
+            <br>
+
+            <!-- 지도 이미지 카드 바로 아래에 배치될 지역 및 주요 던전 안내 (방위별 분류 + 접기/펼치기) -->
+            <div class="card" style="padding: 20px;">
+                <h2>🗺️ 지역 및 주요 던전 안내</h2>
+                <hr style="border: 0; height: 1px; background: #444; margin: 15px 0;">
+                <p style="color: #bbb; margin-bottom: 15px;">방위별 대륙의 특성과 주요 던전 정보입니다. 클릭하여 펼쳐보세요.</p>
+
+                <!-- 1. 대륙 중심 -->
+                <details style="background: #161616; border: 1px solid #444; border-radius: 8px; margin-bottom: 12px; padding: 12px; cursor: pointer;">
+                    <summary style="color: #ffd95a; font-weight: bold; font-size: 16px; outline: none;">🌟 대륙 중심</summary>
+                    <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 10px; cursor: default;">
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">베르데아</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 대륙 중심 / 수도 / 데이브레이크</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 제국의 중심이 되는 수도이자, 제국 제일의 모험가 길드인 데이브레이크가 위치한 핵심 지역입니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 봉인된 서고</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 2. 서부 -->
+                <details style="background: #161616; border: 1px solid #444; border-radius: 8px; margin-bottom: 12px; padding: 12px; cursor: pointer;">
+                    <summary style="color: #ffd95a; font-weight: bold; font-size: 16px; outline: none;">🧭 서부</summary>
+                    <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 10px; cursor: default;">
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">유텔피온</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 서부 상업 / 흑영암도 본거지 / 만정상회</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 활발한 상업이 이루어지는 서부 지역으로, 모든 정보가 모이는 만정상회와 어둠의 조직 흑영암도의 본거지가 자리 잡고 있습니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 황금 먹는 미궁</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 3. 동부 -->
+                <details style="background: #161616; border: 1px solid #444; border-radius: 8px; margin-bottom: 12px; padding: 12px; cursor: pointer;">
+                    <summary style="color: #ffd95a; font-weight: bold; font-size: 16px; outline: none;">🌄 동부</summary>
+                    <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 10px; cursor: default;" style="display: flex; flex-direction: column; gap: 15px;">
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">힐리네스</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 동부 시골 / 에르네스 마을 / 주점 할렐루바</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 평화로운 분위기의 동부 시골 지역이며, 푸근한 에르네스 마을과 인기 주점인 할렐루바가 위치해 있습니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 잠든 숲의 균열</p>
+                        </div>
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">폴가튼랜드</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 동남부 무인지역 / 원념들의 물리화</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 발길이 닿지 않는 황폐한 무인지역으로, 응어리진 원념들이 실체화하여 떠도는 위험한 사지입니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 망자의 도시</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 4. 남부 -->
+                <details style="background: #161616; border: 1px solid #444; border-radius: 8px; margin-bottom: 12px; padding: 12px; cursor: pointer;">
+                    <summary style="color: #ffd95a; font-weight: bold; font-size: 16px; outline: none;">☀️ 남부</summary>
+                    <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 10px; cursor: default;">
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">아피티온</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 남부 교단 본부 / 고마력 지대</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 신성한 신앙의 중심지인 엘시온 교단 본부가 위치해 있으며, 사방에 높은 마력이 감도는 지대입니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 황혼의 지하성당</p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 5. 북부 및 북서부/북동부 -->
+                <details style="background: #161616; border: 1px solid #444; border-radius: 8px; margin-bottom: 0; padding: 12px; cursor: pointer;">
+                    <summary style="color: #ffd95a; font-weight: bold; font-size: 16px; outline: none;">❄️ 북부 및 북방 일대</summary>
+                    <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 10px; cursor: default; display: flex; flex-direction: column; gap: 15px;">
+                        <!-- 라미안 -->
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">라미안</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 북부 수인들의 땅 / 북서부의 서늘한 바람 + 따스한 화룡의 서식지 온도</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 수인들이 모여 사는 북부의 땅으로, 서늘한 바람이 불어오면서도 화룡의 서식지 주변은 따스한 온도를 유지합니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 화룡의 땅</p>
+                        </div>
+                        <!-- 아슬리테 -->
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">아슬리테</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 북서부 잊혀진 토지 / 고대유물 존재</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 세인의 기억에서 점차 잊혀진 북서부의 토지이며, 과거 문명의 고대 유물들이 잠들어 있는 미지의 장소입니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 시련의 미궁</p>
+                        </div>
+                        <!-- 콜리비탄 -->
+                        <div style="background: #1a1a1a; border: 1px solid #444; border-radius: 8px; padding: 15px;">
+                            <h3 style="color: #ffd95a; margin-bottom: 8px;">콜리비탄</h3>
+                            <p style="margin-bottom: 6px;"><strong>📍 위치:</strong> 북동부 설원 지대 / 던전 넘어 따듯한 마을 존재 / 망명자와 북부인 거주</p>
+                            <p style="margin-bottom: 6px;"><strong>📖 설명:</strong> 매서운 추위가 몰아치는 북동부 설원 지대입니다. 험난한 던전 너머에는 온화한 마을이 존재하며, 갈 곳 없는 망명자와 북부인들이 모여 삽니다.</p>
+                            <p style="margin-bottom: 0;"><strong>⚔️ 주요 던전:</strong> 빙결 설원</p>
+                        </div>
+                    </div>
+                </details>
             </div>
             <br>
  <div class="card" style="padding: 20px;">
